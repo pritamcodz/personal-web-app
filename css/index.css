@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --bg-main: #101b38;
   --bg-tag: #183656;
@@ -15,142 +17,380 @@
   box-sizing: border-box;
 }
 
-::selection{
-    background-color: #57DAD4;
-    color: #144D5F;
+::selection {
+  background-color: #57dad4;
+  color: #144d5f;
 }
 
 body {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   grid-template-rows: 1fr;
   /* column-gap: 10px; */
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
+  font-display: swap;
 
   background-color: var(--bg-main);
+
+  overflow: hidden;
 }
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--txt-clr-2);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--txt-clr-2);
+
+  transition: color 0.25s ease-in-out;
 }
 
+/* ------------------- Header Starts ------------------- */
 header {
   /* background: #000; */
-  border-right: 2px solid black;
-  padding-left: 100px;
+  /* border-right: 2px solid black; */
+  padding: 100px 75px;
+  padding-bottom: 60px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   overflow: hidden;
 }
 
+header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header > div:first-child {
+  gap: 50px;
+}
+
 /* ------------------- Header Intro ------------------- */
 header #intro h1 a {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--txt-clr);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--txt-clr);
 }
 header #intro h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--txt-clr-2);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--txt-clr-2);
 }
 header #intro p {
-    /* border: 2px solid; */
-    width: 65%;
-    margin-top: 30px;
-    font-size: 1rem;
-    color: var(--txt-clr-3);
+  width: 65%;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: var(--txt-clr-3);
 }
 
 /* ------------------- Header Nav ------------------- */
 
-header nav {
-    /* border: 2px solid; */
-}
-header nav ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-header nav ul li a{
-    /* border: 2px solid; */
-
-    width: fit-content;
-    height: 40px;
-
-    font-size: 1rem;
-    font-weight: 600;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
+header nav ul {
+  gap: 5px !important;
 }
 
+.nav__link {
+  width: fit-content;
+  height: 40px;
 
-header nav ul li a > span {
-    display: block;
+  font-size: 1rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-
-header nav ul li a .expbl-line {
-    width: 40px;
-    height: 2px;
-    background: var(--txt-clr-3);
-    transition: width 0.25s ease-in-out,
-                background 0.25s ease-in-out;
+.nav__link span {
+  display: block;
 }
 
-header nav ul li a.active .expbl-line,
-header nav ul li a:hover .expbl-line
-{
-    width: 80px;
-    background: var(--txt-clr);
+.nav__link.active span:first-child,
+.nav__link:hover span:first-child {
+  width: 80px;
+  background: var(--txt-clr);
 }
 
-
-header nav ul li a .link-text {
-    /* border: 2px solid; */
-    color: var(--txt-clr-3);
-    transition: color 0.25s ease-in-out;
+.nav__link span:last-child {
+  color: var(--txt-clr-3);
+  transition: color 0.25s ease-in-out;
 }
-header nav ul li a.active .link-text,
-header nav ul li a:hover .link-text
-{
-    color: var(--txt-clr);
+.nav__link.active span:last-child,
+.nav__link:hover span:last-child {
+  color: var(--txt-clr);
 }
 
 /* ------------ Header Social Media Links ------------ */
 
-header ul#sm-links {
-    /* border: 2px solid; */
-
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    column-gap: 25px;
+#sm-links {
+  flex-direction: row !important;
+  gap: 40px !important;
 }
 
-header ul#sm-links li a {
-    /* border: 2px solid; */
-
-    display: block;
-    width: 25px;
-    color: var(--txt-clr-3);
-    transition: color 0.25s ease-in-out;
+#sm-links a {
+  display: block;
+  width: 25px;
+  color: var(--txt-clr-3);
+  transition: color 0.25s ease-in-out;
 }
-header ul#sm-links li a:hover {
-    color: var(--txt-clr);
+#sm-links a:hover {
+  color: var(--txt-clr);
 }
 
 /* ------------------- Main ------------------- */
 main {
-    display: none;
+  display: block;
+  overflow-x: hidden;
+  padding-top: 100px;
+  padding-right: 50px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+/* ------------------- Main > About Sec ------------------- */
+#about-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#about-content p {
+  color: var(--txt-clr-3);
+}
+#about-content a {
+  font-weight: 600;
+  color: var(--txt-clr);
+}
+#about-content a:hover {
+  color: var(--txt-clr-hvr);
+}
+
+/* ------------------- Main > Experience Sec ------------------- */
+
+.experience ul {
+  flex-flow: row wrap !important;
+}
+
+.experience__work__time {
+  height: 30px;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+
+  color: var(--txt-clr-3);
+}
+.experience__work__time span:nth-child(2) {
+  width: 10px !important;
+  background: var(--txt-clr-3);
+}
+
+.experience__work__details h2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--txt-clr);
+  transition: all 0.25s ease-in-out;
+}
+.experience__work__details h2 span.dot-separtor {
+  width: 5px;
+  height: 5px;
+  background: var(--txt-clr);
+  border-radius: 50%;
+
+  transition: all 0.25s ease-in-out;
+}
+.experience__work__details h2 span.icon {
+  width: 15px;
+  display: flex;
+  align-self: flex-end;
+
+  color: red;
+
+  transition: all 0.25s ease-in-out;
+}
+
+.experience:hover .experience__work__details h2 {
+  color: var(--txt-clr-hvr);
+}
+.experience:hover .experience__work__details h2 span.icon {
+  transform: translateY(-5px) translateX(5px);
+}
+.experience:hover .experience__work__details h2 span.dot-separtor {
+  background: var(--txt-clr-hvr);
+}
+
+
+.experience__work__details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.experience__work__details p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--txt-clr-3);
+}
+
+.experience__work__details .work-exp-tags a {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.experience__work__details .work-exp-tags a:hover {
+  color: var(--txt-clr-hvr);
+}
+.experience__work__details .work-exp-tags a span.work-exp-tags-icon {
+  display: block;
+  width: 10px;
+}
+
+
+.experience__work__details .skill-exp-tags li {
+  width: fit-content;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: #007c7c63;
+  color: var(--txt-clr-tag);
+}
+
+main #projects-sec ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+} 
+
+/* TODO: Project Section Incomplete Make it Complete */
+
+/* ------------------- Main > Resume Download Button ------------------- */
+main #resume-sec #rsme-dwld-btn {
+  /* border: 1px solid; */
+
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+main #rsme-dwld-btn span {
+  display: block;
+  /* border: 1px solid; */
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--txt-clr);
+}
+main #rsme-dwld-btn span.rsme-icn {
+  width: 15px;
+  align-self: flex-end;
+
+  transition: transform 0.15s ease-in;
+}
+
+main #rsme-dwld-btn:hover span {
+  color: var(--txt-clr-hvr);
+}
+main #rsme-dwld-btn:hover span.rsme-icn {
+  transform: translateY(-5px) translateX(5px);
+}
+
+/* ------------------- Main > Project Archive Button ------------------- */
+main #prj-archve-dwld-btn {
+  /* border: 1px solid; */
+
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+main #prj-archve-dwld-btn span.prj-archve-btn-txt {
+  display: block;
+  /* border: 1px solid; */
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--txt-clr);
+  border-bottom: 1px solid transparent;
+}
+main #prj-archve-dwld-btn span.prj-archve-btn-icn {
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.15s ease-in;
+}
+
+main #prj-archve-dwld-btn:hover span.prj-archve-btn-txt {
+  border-bottom: 1px solid var(--txt-clr-hvr);
+}
+main #prj-archve-dwld-btn:hover span.prj-archve-btn-icn {
+  transform: translateX(10px);
+}
+
+/* ------------------- Main > Footer ------------------- */
+footer p {
+  width: 80%;
+  padding-bottom: 100px;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--txt-clr-3);
+}
+footer p a {
+  color: var(--txt-clr-2);
+}
+footer p a:hover {
+  color: var(--txt-clr-hvr);
+}
+
+.transparent-card {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+
+  /* backdrop-filter: blur(10px); */
+  transition: all 0.25s ease-in-out;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.transparent-card:hover {
+  background: #bceaff13;
+}
+
+.list-wrapper {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.span__hyphen {
+  width: 40px;
+  height: 1px;
+  background: var(--txt-clr-3);
+  transition: width 0.25s ease-in-out, background 0.25s ease-in-out;
 }
